@@ -1,13 +1,16 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+
+dotenv.config();
 
 import api from "./routes/api";
 
 const app = express();
 app.use(cors());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

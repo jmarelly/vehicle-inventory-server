@@ -1,10 +1,10 @@
 import mysql2 from "mysql2";
 
 const pool = mysql2.createPool({
-  host: "us-cdbr-east-04.cleardb.com",
-  user: "bc92eed9fd020a",
-  password: "0ce35883", 
-  database: "heroku_5cc4543f4cb70f3",
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD, 
+  database: process.env.DATABASE,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
